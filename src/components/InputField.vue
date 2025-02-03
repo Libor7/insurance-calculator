@@ -27,7 +27,7 @@ export default defineComponent({
       required: true,
     },
     modelValue: {
-      type: [String, Number, Array] as PropType<string | number | any[]>,
+      type: [String, Number, Array] as PropType<string | number | unknown[]>,
       required: true,
     },
     options: {
@@ -51,10 +51,10 @@ export default defineComponent({
   },
   computed: {
     inputValue: {
-      get(): string | number | any[] {
+      get(): string | number | unknown[] {
         return this.modelValue;
       },
-      set(value: string | number | Array<any>) {
+      set(value: string | number | Array<unknown>) {
         this.$emit("update:modelValue", value);
       },
     },
